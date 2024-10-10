@@ -25,7 +25,7 @@ const ProtectedRoute: React.FC<{ setShowNavbar: (show: boolean) => void }> = ({ 
   if (isAuthenticated === null) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <ClipLoader color="#3498db" loading={true} size={50} /> {/* Spinner */}
+        <ClipLoader color="#3498db" loading={true} size={50} />
       </div>
     );
   }
