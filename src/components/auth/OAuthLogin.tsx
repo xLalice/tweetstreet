@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Logo from "../../assets/logo.png"
-import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { verifyAuth } from '../../services/api';
+import { ClipLoader } from 'react-spinners';
 
 const OAuthLogin: React.FC = () => {
   const navigate = useNavigate();
@@ -30,6 +31,14 @@ const OAuthLogin: React.FC = () => {
 
     checkAuthToken();
   }, [navigate]);
+
+  if (loading){
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <ClipLoader color="#3498db" loading={true} size={50} />
+      </div>
+    )
+  }
 
 
   const handleTwitterLogin = () => {
