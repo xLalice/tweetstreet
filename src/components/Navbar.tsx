@@ -10,6 +10,7 @@ const Navbar: React.FC<{ setShowNavbar: (show: boolean) => void }> = ({ setShowN
     try {
       await logoutUser();
       setShowNavbar(false);
+      localStorage.removeItem("authToken");
       navigate('/login');
     } catch (error) {
       console.error('Error logging out:', error);
