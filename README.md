@@ -60,7 +60,9 @@ This application is a social media post scheduler that allows users to:
 ### API Endpoints
 
 #### Authentication:
-- **POST /api/connect/twitter**: Authenticate the user with Twitter via OAuth.
+- **POST api.twitter.com/oauth/request_tokenr**: AThis endpoint is used to obtain a request token that your application can use to initiate the authentication process.
+- **POST api.twitter.com/oauth/authorize**: After obtaining the request token, your application redirects the user to this endpoint, where they can log in to Twitter and authorize your application.
+- **POST api.twitter.com/oauth/access_token**: Once the user authorizes the application, Twitter redirects them back to your callback URL with a verification code. Your application then exchanges this code for an access token at this endpoint.
 
 #### Posts:
 - **POST /api/posts**: Create a new post. Payload should include content, selected platform (Twitter), location coordinates, and scheduled time.
